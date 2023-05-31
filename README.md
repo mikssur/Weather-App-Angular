@@ -1,4 +1,6 @@
-# MyApp
+# Weather App
+
+This Angular project is a weather application that provides real-time weather information and a 7-day forecast. It allows users to search for a specific city and view the current temperature along with a detailed forecast for the upcoming week. By developing this project, I gained a solid understanding of the fundamentals of Angular, including component creation, data binding, and API integration. Through this hands-on experience, I enhanced my skills in building dynamic web applications using the Angular framework.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 

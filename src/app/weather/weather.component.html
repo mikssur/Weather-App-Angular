@@ -1,0 +1,54 @@
+<div class="weather-container" *ngIf="currentWeather">
+  <form class="search-form" (ngSubmit)="searchWeather()">
+    <input
+      class="search-input"
+      type="text"
+      [(ngModel)]="city"
+      name="city"
+      placeholder="Enter city name"
+    />
+    <button class="search-button" type="submit">Search</button>
+  </form>
+  <div class="error" *ngIf="error">{{ error }}</div>
+
+  <h2 class="section-title">Current Weather</h2>
+  <p>Temperature: {{ currentWeather.main.temp }} K</p>
+  <p>Feels Like: {{ currentWeather.main.feels_like }} K</p>
+  <p>Minimum Temperature: {{ currentWeather.main.temp_min }} K</p>
+  <p>Maximum Temperature: {{ currentWeather.main.temp_max }} K</p>
+  <p>Pressure: {{ currentWeather.main.pressure }} hPa</p>
+  <p>Humidity: {{ currentWeather.main.humidity }}%</p>
+
+  <h2 class="section-title">Weather</h2>
+  <p>Main: {{ currentWeather.weather[0].main }}</p>
+  <p>Description: {{ currentWeather.weather[0].description }}</p>
+  <p>Icon: {{ currentWeather.weather[0].icon }}</p>
+
+  <h2 class="section-title">Wind</h2>
+  <p>Speed: {{ currentWeather.wind.speed }} m/s</p>
+  <p>Degrees: {{ currentWeather.wind.deg }}</p>
+
+  <h2 class="section-title">Clouds</h2>
+  <p>{{ currentWeather.clouds.all }}%</p>
+
+  <h2 class="section-title">Other Information</h2>
+  <p>Visibility: {{ currentWeather.visibility }} meters</p>
+  <p>Timezone: {{ currentWeather.timezone }}</p>
+  <p>City Name: {{ currentWeather.name }}</p>
+
+  <h2 class="section-title">Forecast</h2>
+  <table class="weather-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Average Temperature (°C)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of averageTemperatures">
+        <td>{{ item.date }}</td>
+        <td>{{ item.averageTemperature }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
